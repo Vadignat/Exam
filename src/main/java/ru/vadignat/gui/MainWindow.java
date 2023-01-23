@@ -21,15 +21,25 @@ public class MainWindow extends JFrame {
         ArrayList<ru.vadignat.Painter> painters = new ArrayList<Painter>();
         painters.add(crt);
 
+        FunctionPainter fp1 = new FunctionPainter(Color.black) {
+            @Override
+            public double invoke(double x) {
+                return 2*x/(1-Math.pow(x,2));
+            }
+        };
+        painters.add(fp1);
         GraphicsPanel mainPanel = new GraphicsPanel(painters);
         mainPanel.setBackground(Color.WHITE);
-        JRadioButton radioButton = new JRadioButton();
+
+        JRadioButton firstButton = new JRadioButton("1", true);
+        JRadioButton secondButton = new JRadioButton("2");
 
         gl.setHorizontalGroup(gl.createSequentialGroup()
                 .addGap(std)
                 .addGroup(gl.createParallelGroup()
                         .addComponent(mainPanel)
-                        .addComponent(radioButton)
+                        .addComponent(firstButton)
+                        .addComponent(secondButton)
                 )
                 .addGap(std)
         );
@@ -37,8 +47,10 @@ public class MainWindow extends JFrame {
         gl.setVerticalGroup(gl.createSequentialGroup()
                 .addGap(10)
                 .addComponent(mainPanel)
-                .addGap(7)
-                .addComponent(radioButton)
+                .addGap(std)
+                .addComponent(firstButton)
+                .addGap(std)
+                .addComponent(secondButton)
                 .addGap(10)
         );
     }

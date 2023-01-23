@@ -16,7 +16,7 @@ public abstract class FunctionPainter implements Painter {
     public void changeColor(Color color){
         this.color = color;
     }
-    public void changeConventer(Converter converter){
+    public void changeConverter(Converter converter){
         cvrt = converter;
     }
 

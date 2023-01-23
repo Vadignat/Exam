@@ -6,8 +6,8 @@ import ru.vadignat.Painter;
 import java.awt.*;
 
 public abstract class FunctionPainter implements Painter {
-    private Converter cvrt;
-    private Color color = Color.BLACK;
+    protected Converter cvrt;
+    protected Color color = Color.BLACK;
     public boolean show = true;
 
     public FunctionPainter(){}
